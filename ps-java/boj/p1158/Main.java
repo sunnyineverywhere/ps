@@ -42,3 +42,28 @@ public class Main {
         return answer;
     }
 }
+
+/*
+다른 풀이
+
+import java.util.*;
+
+회전(Deque) 기반 요세푸스
+public static List<Integer> solutionWithDeque(int N, int K) {
+    Deque<Integer> dq = new ArrayDeque<>();
+    for (int i = 1; i <= N; i++) dq.offerLast(i);
+
+    List<Integer> answer = new ArrayList<>(N);
+
+    while (!dq.isEmpty()) {
+        /* K-1 번 왼쪽으로 회전 (2번 연산)
+        for (int r = 0; r < K - 1; r++) {
+            dq.offerLast(dq.pollFirst());   // 맨 앞을 뒤로 보내기
+        }
+        /* 맨 앞 = K번째 사람 제거
+        answer.add(dq.pollFirst());
+    }
+    return answer;
+}
+
+ */
